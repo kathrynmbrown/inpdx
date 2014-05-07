@@ -1,0 +1,13 @@
+<h1>Add an Organization</h1>
+   
+  <%= form_for @organization do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :contact %>
+  <%= f.text_field :contact %>
+  <%= f.submit "Save organization", class: "button" %>
+<% end %> 

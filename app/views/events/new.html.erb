@@ -1,0 +1,15 @@
+<h1>Add an Event</h1>
+   
+  <%= form_for @event do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :datetime %>
+  <%= f.text_field :datetime %>
+  <%= f.label :contact %>
+  <%= f.text_field :contact %>
+  <%= f.submit "Save event", class: "button" %>
+<% end %> 

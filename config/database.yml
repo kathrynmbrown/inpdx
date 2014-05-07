@@ -1,0 +1,15 @@
+
+development:
+  adapter: postgresql
+  database: inpdx_development
+
+
+test:
+  adapter: postgresql
+  database: inpdx_test
+ 
+
+production:
+  adapter: postgresql
+  database: inpdx_production
+

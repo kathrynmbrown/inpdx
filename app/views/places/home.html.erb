@@ -1,0 +1,11 @@
+<%= image_tag("magicgardens.jpg", height: '100%', width: '100%', class: "front_page_image") %>
+
+<h5>I'm interested in</h5>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.text_field :name_cont %>
+  <%= f.submit %>
+<% end %>
+
+<p>or find an organization or event. </p>
