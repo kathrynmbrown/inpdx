@@ -5,11 +5,11 @@
   <%= f.text_field :name %>
   <%= f.label :description %>
   <%= f.text_field :description %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
   <%= f.label :address %>
   <%= f.text_field :address %>
   <%= f.label :phone %>
   <%= f.text_field :phone %>
+  <%= f.label :tag_list, "Tags (separated by commas)" %>
+  <%= f.text_field :tag_list %>
   <%= f.submit "Save place", class: "button" %>
 <% end %> 

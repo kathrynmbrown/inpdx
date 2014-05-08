@@ -1278,4 +1278,22 @@
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
 
+#homepage-hero {
+  background-image: url(image_path('magicgardens.jpg')); 
+  height: 600px;
+  text-align: left;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 100px 20px 0 20px;
+}
+
+#homepage-form {
+  background: #ffffff;
+}
+
+#events-ads {
+  background-color: #ffffff;
+  height: 600px;
+}
+
 @import 'foundation';

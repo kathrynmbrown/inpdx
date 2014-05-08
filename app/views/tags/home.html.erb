@@ -1,0 +1,29 @@
+<section id="homepage-hero">
+  <div class="row">
+    <div class="large-4 columns" id="homepage-form">
+      <h3>Find by tag:</h3>
+      <% @tags.each do |tag| %>
+        <%= link_to tag.name, tag_path(tag.name), class: "button"%>
+      <% end %>
+    </div>
+    <div class="large-8 columns">
+    </div>  
+  </div>  
+</section>  
+<section id="events-ads">
+  <div class="row">
+    <div class="large-6 columns" id="upcoming-events">
+      <% @events.each do |event| %>
+        <ul>
+          <li><%= event.name %></li>
+        </ul>  
+      <% end %>  
+    </div>
+    <div class="large-6 columns" id="ads">
+      <div id="banner">
+      </div>
+      <div id="email-signup">
+      </div>
+    </div>
+  </div>
+</section>

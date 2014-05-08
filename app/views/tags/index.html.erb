@@ -1,0 +1,19 @@
+<h1>Results</h1>
+
+<% @places.each do |place| %>
+  <ul>
+    <li><%= place.name %><br><%= place.tag_list %></li>
+  </ul>  
+<% end %> 
+
+<% @events.each do |event| %>
+  <ul>
+    <li><%= event.name %><br><%= event.tag_list %></li>
+  </ul>  
+<% end %> 
+
+<% @organizations.each do |organization| %>
+  <ul>
+    <li><%= organization.name %><br><%= organization.tag_list %></li>
+  </ul>  
+<% end %> 

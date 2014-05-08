@@ -11,6 +11,7 @@ gem 'jquery-turbolinks'
 gem 'foundation-rails'
 gem 'bcrypt'
 gem 'devise'
+gem 'acts-as-taggable-on'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'ransack'
 gem 'rest-client'
