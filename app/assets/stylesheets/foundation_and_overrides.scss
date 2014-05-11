@@ -1280,20 +1280,49 @@
 
 #homepage-hero {
   background-image: url(image_path('magicgardens.jpg')); 
-  height: 600px;
+  height: 400px;
   text-align: left;
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 100px 20px 0 20px;
+  background-color: #000000;
+}
+
+#hero-header h1 {
+  color: #ffffff;
+}
+
+#hero-header h4 {
+  color: #ffffff;
+}
+
+#tags-events {
+  height: 500px;
+  padding: 15px;
 }
 
 #homepage-form {
   background: #ffffff;
+  background-size: 50%;
 }
 
-#events-ads {
-  background-color: #ffffff;
-  height: 600px;
+#upcoming-events {
+  border-color: #333333;
+  border-style: solid;
+  border-width: 1px;
 }
+
+#organizations {
+  background-image: url(image_path('wood.png')); 
+  background-repeat: repeat;
+  background-size: 100%;
+  height: 500px;
+}
+
+#featured-organization {
+  background-color: #ffffff;
+  margin-top: 15px;
+}
+
 
 @import 'foundation';

@@ -1,29 +1,54 @@
 <section id="homepage-hero">
-  <div class="row">
-    <div class="large-4 columns" id="homepage-form">
-      <h3>Find by tag:</h3>
+  <div class="row" id="hero-header">
+    <div class="large-7 columns">
+    </div> 
+    <div class="large-5 columns">
+      <h1>Sex in PDX</h1>
+      <h4>Portland's Guide To All Things Sex</h4>
+      <% if current_user %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: "button" %></li>
+        <%= link_to "Login", new_user_session_path, class: "button" %></li>
+      <% end %>
+    </div>
+  </div>
+</section> 
+<section id="tags-events">
+  <div class="row" id="homepage-form">
+    <div class="large-8 columns">
+      <h5>Find events, organizations, or places by tag:</h5>
       <% @tags.each do |tag| %>
         <%= link_to tag.name, tag_path(tag.name), class: "button"%>
       <% end %>
-    </div>
-    <div class="large-8 columns">
     </div>  
-  </div>  
-</section>  
-<section id="events-ads">
-  <div class="row">
-    <div class="large-6 columns" id="upcoming-events">
+    <div class="large-4 columns" id="upcoming-events">
+      <h5>Popular Upcoming Events</h5>
       <% @events.each do |event| %>
         <ul>
-          <li><%= event.name %></li>
+          <li><%= link_to event.name, event_path(event.name)%><br>
+          <%= event.datetime %></li>
         </ul>  
       <% end %>  
     </div>
-    <div class="large-6 columns" id="ads">
-      <div id="banner">
-      </div>
-      <div id="email-signup">
-      </div>
+  </div>  
+</section>
+<section id="organizations">
+  <div class="row">
+    <div class="large-8 columns" id="featured-organization">
+    <h4>Featured Organizations</h4>
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
+        <li><%= image_tag("leader.jpg") %><h5>HIV Crisis Center</h5></li>
+        <li><%= image_tag("leader.jpg") %><h5>The Polyamorous Club</h5></li>
+        <li><%= image_tag("leader.jpg") %><h5>Dancer's Help Center</h5></li>
+        <li><%= image_tag("leader.jpg") %><h5>HIV Crisis Center</h5></li>
+        <li><%= image_tag("leader.jpg") %><h5>The Polyamorous Club</h5></li>
+        <li><%= image_tag("leader.jpg") %><h5>Dancer's Help Center</h5></li>
+      </ul>
+    </div>
+    <div class="large-4 columns" id="quote">
+      
     </div>
   </div>
+</section>
+<section id="footer">
 </section>

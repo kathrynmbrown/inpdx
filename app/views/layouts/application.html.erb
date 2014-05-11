@@ -38,9 +38,6 @@
                <li><%= link_to 'Create profile', new_profile_path %></li>
               </ul>
             </li>
-           <% else %>
-             <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
-             <li class="active"><%= link_to "Login", new_user_session_path %></li>
           <% end %>
     </ul>
 
@@ -51,10 +48,7 @@
     </ul>
   </section>
 </nav>
-
 <%= yield %>
-      <%= flash[:alert] %>
-      <%= flash[:notice] %>
     </div>
   </body>
 </html>
