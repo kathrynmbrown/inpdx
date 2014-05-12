@@ -4,4 +4,20 @@
   <li class="unavailable"><a href="#">All Results</a></li>
   <li class="current"><a href="#"><%= @event.name %></a></li>
 </ul>
-ALL THE INFO ABOUT THE EVENT! 
+<section id="page-hero">
+  <div class="row">
+    <div class="small-6 large-3 columns">
+      <%= image_tag("leader.jpg") %>
+    </div>
+    <div class="large-6 columns">
+      <h3><%= @event.name %></h3>
+      <p><%= @event.description %></p>
+    </div>
+    <div class="large-3 columns">
+      <h5>Date: <%= @event.datetime %></h5>
+    </div>
+  </div>  
+</section>
+<section id="page-body">
+All the info.
+</section>

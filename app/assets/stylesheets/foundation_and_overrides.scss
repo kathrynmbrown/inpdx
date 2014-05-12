@@ -1318,5 +1318,16 @@
   margin-top: 15px;
 }
 
+#page-hero {
+  background-image: url(image_path('wood.png')); 
+  height: 400px;
+  text-align: left;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 100px 20px 0 20px;
+  background-color: #000000;
+}
+
+
 
 @import 'foundation';
