@@ -40,7 +40,7 @@
       <h3>Events nearby</h3>
       <ul>
       <% for event in @event.nearbys(10) %>
-        <li><%= link_to event.address, event %> (<%= event.distance.round(2) %> miles)</li>
+        <li><%= link_to event.name, event %> (<%= event.distance.round(2) %> miles)</li>
       <% end %>
       </ul>
     </div>
