@@ -19,5 +19,6 @@
   </div>  
 </section>
 <section id="page-body">
-All the info.
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+  <h5>Address: <%= @event.address %></h5>
 </section>

@@ -17,6 +17,7 @@ gem 'ransack'
 gem 'rest-client'
 gem 'aws-sdk'
 gem 'unicorn'
+gem 'geocoder'
 
 
 group :development do

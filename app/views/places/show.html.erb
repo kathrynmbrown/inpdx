@@ -14,10 +14,10 @@
       <p><%= @place.description %></p>
     </div>
     <div class="large-3 columns">
-      <h5>Address: <%= @place.address %></h5>
     </div>
   </div>  
 </section>
 <section id="page-body">
-All the info.
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
+  <h5>Address: <%= @place.address %></h5>
 </section>
