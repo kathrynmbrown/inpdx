@@ -1,19 +1,74 @@
-<h1>Results</h1>
+<ul class="breadcrumbs">
+  <li><a href="#">Home</a></li>
+  <li class="unavailable"><a href="#">Tag Search</a></li>
+  <li class="current"><a href="#">All Results</a></li>
+</ul>
 
-<% @places.each do |place| %>
-  <ul>
-    <li><%= place.name %><br><%= place.tag_list %></li>
-  </ul>  
-<% end %> 
+<div class="row">
+  <div class="small-12 large-8 columns">
+  <h3>Event Results</h3>
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Date</th>
+          <th>Title</th>
+          <th width="150">Start</th>
+          <th width="150">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to event.name, event_path(event) %></td>
+          <td><%=event.description %></td>
+          <td><%=event.datetime %></td>
+          <td>Content Goes Here</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <h3>Places Results</h3>
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Name</th>
+          <th>Description</th>
+          <th width="150">Address</th>
+          <th width="150">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @places.each do |place| %>
+        <tr>
+          <td><%= link_to place.name, place_path(place) %></td>
+          <td><%=place.description %></td>
+          <td><%=place.address %></td>
+          <td>Content Goes Here</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <h3>Organization Results</h3>
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Name</th>
+          <th>Description</th>
+          <th width="150">Contact</th>
+          <th width="150">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @organizations.each do |organization| %>
+        <tr>
+          <td><%= link_to organization.name, organization_path(organization) %></td>
+          <td><%= organization.description %></td>
+          <td><%= organization.contact %></td>
+          <td>Content Goes Here</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  
+</div>  
 
-<% @events.each do |event| %>
-  <ul>
-    <li><%= event.name %><br><%= event.tag_list %></li>
-  </ul>  
-<% end %> 
-
-<% @organizations.each do |organization| %>
-  <ul>
-    <li><%= organization.name %><br><%= organization.tag_list %></li>
-  </ul>  
-<% end %> 
