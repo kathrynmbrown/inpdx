@@ -18,6 +18,8 @@
   </div>  
 </section>
 <section id="page-body">
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
-  <h5>Address: <%= @place.address %></h5>
+  <div class="row">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
+    <h5>Address: <%= @place.address %></h5>
+  </div>  
 </section>
