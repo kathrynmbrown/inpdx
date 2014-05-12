@@ -25,8 +25,8 @@
       <h5>Popular Upcoming Events</h5>
       <% @events.each do |event| %>
         <ul>
-          <li><%= link_to event.name, event_path(event.name)%><br>
-          <%= event.datetime %></li>
+          <li><%= link_to event.name, event_path(event)%><br>
+          <%= event.event_date %></li>
         </ul>  
       <% end %>  
     </div>
