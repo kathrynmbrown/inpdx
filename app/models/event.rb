@@ -8,5 +8,6 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
+  belongs_to :organization
+  belongs_to :place
 end
-

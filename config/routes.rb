@@ -1,5 +1,5 @@
 Inpdx::Application.routes.draw do
- 
+
   get 'tags/:tag', to: 'tags#index', as: :tag
   devise_for :users
   resources :places

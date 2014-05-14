@@ -14,8 +14,9 @@
       <p><%= @event.description %></p>
     </div>
     <div class="large-3 columns">
+      LINK TO RSVP TO EVENT
     </div>
-  </div>  
+  </div>
 </section>
 <section id="page-body">
   <div class="row">
@@ -23,18 +24,18 @@
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
       <h5>Address: <%= @event.address %></h5>
     </div>
-    <div class="small-12 large-5 columns">  
+    <div class="small-12 large-5 columns">
       <p><%= @event.long_description %></p>
-    </div>  
-    <div class="small-12 large-3 columns"> 
+    </div>
+    <div class="small-12 large-3 columns">
       <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
       <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
       <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
       <h5>ADD EVENT TO CALENDAR BUTTON</h5>
-      <h3>Who's going</h3> 
+      <h3>Who's going</h3>
       <p>ADD PEOPLE GOING TO EVENT HERE</p>
-    </div> 
-  </div> 
+    </div>
+  </div>
   <div class="row">
     <div class="small-12 large-4 columns">
       <h3>Events nearby</h3>
@@ -44,10 +45,10 @@
       <% end %>
       </ul>
     </div>
-    <div class="small-12 large-6 columns">  
+    <div class="small-12 large-6 columns">
 
     </div>
     <div class="small-12 large-3 columns">
-    </div> 
-  </div> 
+    </div>
+  </div>
 </section>
