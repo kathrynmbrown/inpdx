@@ -21,11 +21,16 @@
   <div class="row">
     <div class="small-12 large-4 columns">
       <h5>Contact: <%= @organization.contact %></h5>
+      LONGER DESCRIPTION
     </div>
     <div class="small-12 large-5 columns">
       <ul>
         <% @organization.events.each do |event| %>
           <li><%= event.name %></li>
+          <li>Date: <%= event.event_date.strftime("%A %B %d, %Y") %></li>
+          <li>Start Time: <%= event.start_time.strftime("%I:%M %P") %></li>
+          <li>End Time: <%= event.end_time.strftime("%I:%M %P") %></li>
+          <%= link_to "See event details", event_path(event) %>
         <% end %>
       </ul>
     </div>
@@ -35,7 +40,6 @@
   </div>
   <div class="row">
     <div class="small-12 large-4 columns">
-      LONGER DESCRIPTION
     </div>
     <div class="small-12 large-6 columns">
 

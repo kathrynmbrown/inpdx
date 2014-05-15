@@ -5,5 +5,6 @@ class Organization < ActiveRecord::Base
   acts_as_taggable
   has_many :events
   has_many :places, through: :events
-
+  has_many :memberships
+  has_many :profiles, through: :memberships
 end
