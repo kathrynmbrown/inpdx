@@ -1,5 +1,5 @@
 <h1>Add an Event</h1>
-   
+
   <%= form_for @event do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -15,9 +15,11 @@
   <%= f.text_field :contact %>
   <%= f.label :address %>
   <%= f.text_field :address %>
-   <%= f.label :long_description %>
+  <%= f.label :long_description %>
   <%= f.text_field :long_description %>
+  <%= f.select(:organization_id, @organization_options) %>
+  <%= f.select(:place_id, @place_options) %>
   <%= f.label :tag_list, "Tags (separated by commas)" %>
   <%= f.text_field :tag_list %>
   <%= f.submit "Save event", class: "button" %>
-<% end %> 
+<% end %>

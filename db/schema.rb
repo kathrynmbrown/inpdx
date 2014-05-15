@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514174828) do
+ActiveRecord::Schema.define(version: 20140514222441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: true do |t|
-    t.string "name"
+  create_table "categories_rsvps", id: false, force: true do |t|
+    t.integer "rsvp_id",     null: false
+    t.integer "category_id", null: false
   end
 
   create_table "events", force: true do |t|
@@ -34,6 +35,9 @@ ActiveRecord::Schema.define(version: 20140514174828) do
     t.integer "organization_id"
     t.integer "place_id"
   end
+
+  add_index "events", ["organization_id"], name: "index_events_on_organization_id", using: :btree
+  add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
 
   create_table "organizations", force: true do |t|
     t.string "name"

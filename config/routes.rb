@@ -4,7 +4,9 @@ Inpdx::Application.routes.draw do
   devise_for :users
   resources :places
   resources :events
-  resources :organizations
+  resources :organizations do
+    resources :events
+  end  
   resources :profiles
   resources :tags
   root to: 'tags#home'

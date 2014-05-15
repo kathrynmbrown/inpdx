@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   end
 
   def new
+    @place_options = Place.all.map{|p| [ p.name, p.id ] }
+    @organization_options = Organization.all.map{|o| [ o.name, o.id ] }
     @event = Event.new
   end
 
@@ -42,6 +44,6 @@ class EventsController < ApplicationController
 
 private
   def event_params
-    params.require(:event).permit(:name, :description, :contact, :tag_list, :address, :latitude, :longitude, :long_description, :event_date, :start_time, :end_time, :organization_id, :place_id)
+    params.require(:event).permit(:name, :description, :contact, :tag_list, :address, :latitude, :longitude, :long_description, :event_date, :start_time, :end_time, :organization_id, :place_id )
   end
 end
