@@ -26,7 +26,10 @@
       <p>MY EVENTS</p>
     </div>
     <div class="small-12 large-3 columns">
-      MY ORGANIZATIONS
+      My Organizations
+      <% @profile.organizations.each do |organization| %>
+        <li><%= organization.name %></li>
+      <% end %>
     </div>
   </div>
   <div class="row">
