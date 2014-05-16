@@ -18,6 +18,7 @@ gem 'rest-client'
 gem 'aws-sdk'
 gem 'unicorn'
 gem 'geocoder'
+gem 'chosen-rails'
 
 
 group :development do
@@ -33,7 +34,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'pry'
-  gem 'dotenv-rails' 
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -42,4 +43,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-end  
+end
