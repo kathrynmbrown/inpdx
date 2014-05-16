@@ -34,7 +34,14 @@
       <% end %>
     </div>
     <div class="small-12 large-3 columns">
-      ADD MOAR STUFF HERE
+      <h5>Upcoming events</h5>
+      <% @place.events.each do |event| %>
+        <li>
+          <%= event.name %><br>
+          <%= event.description %><br>
+          LINK TO SEE MORE INFO
+        </li>
+      <% end %>
     </div>
   </div>
   <div class="row">
