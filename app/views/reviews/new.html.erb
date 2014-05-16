@@ -1,0 +1,13 @@
+<h1>Add a Review</h1>
+
+  <%= form_for @review do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area(:content, cols: 20, rows: 10) %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.select(:place_id, @place_options) %>
+  <%= f.hidden_field :profile_id, value: @current_profile %>
+  <%= f.submit "Save review", class: "button" %>
+<% end %>

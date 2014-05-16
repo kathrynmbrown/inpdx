@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def home
-  end  
+  end
 
   def index
     if params[:tag]
