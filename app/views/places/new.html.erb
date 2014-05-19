@@ -1,5 +1,5 @@
 <h1>Add a Place</h1>
-   
+
   <%= form_for @place do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -11,5 +11,7 @@
   <%= f.text_field :phone %>
   <%= f.label :tag_list, "Tags (separated by commas)" %>
   <%= f.text_field :tag_list %>
+  <%= f.file_field :avatar %>
+  <%= f.file_field :background_image %>
   <%= f.submit "Save place", class: "button" %>
-<% end %> 
+<% end %>

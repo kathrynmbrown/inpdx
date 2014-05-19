@@ -1,5 +1,5 @@
 <h1>Add an Organization</h1>
-   
+
   <%= form_for @organization do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -9,5 +9,7 @@
   <%= f.text_field :contact %>
   <%= f.label :tag_list, "Tags (separated by commas)" %>
   <%= f.text_field :tag_list %>
+  <%= f.file_field :avatar %>
+  <%= f.file_field :background_image %>
   <%= f.submit "Save organization", class: "button" %>
-<% end %> 
+<% end %>

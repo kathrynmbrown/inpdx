@@ -19,5 +19,9 @@
   <%= f.select(:place_id, @place_options) %>
   <%= f.label :tag_list, "Tags (separated by commas)" %>
   <%= f.text_field :tag_list %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  <%= f.label :background %>
+  <%= f.file_field :background %>
   <%= f.submit "Save event", class: "button" %>
 <% end %>

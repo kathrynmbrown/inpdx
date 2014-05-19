@@ -11,21 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516200734) do
+ActiveRecord::Schema.define(version: 20140519210214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string  "name"
-    t.string  "description"
-    t.string  "contact"
-    t.string  "long_description"
-    t.date    "event_date"
-    t.time    "start_time"
-    t.time    "end_time"
-    t.integer "organization_id"
-    t.integer "place_id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "contact"
+    t.string   "long_description"
+    t.date     "event_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "organization_id"
+    t.integer  "place_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   add_index "events", ["organization_id"], name: "index_events_on_organization_id", using: :btree
@@ -42,26 +50,50 @@ ActiveRecord::Schema.define(version: 20140516200734) do
   add_index "memberships", ["profile_id"], name: "index_memberships_on_profile_id", using: :btree
 
   create_table "organizations", force: true do |t|
-    t.string "name"
-    t.string "description"
-    t.string "contact"
+    t.string   "name"
+    t.string   "description"
+    t.string   "contact"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "places", force: true do |t|
-    t.string "name"
-    t.string "description"
-    t.string "address"
-    t.string "phone"
-    t.float  "latitude"
-    t.float  "longitude"
+    t.string   "name"
+    t.string   "description"
+    t.string   "address"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "profiles", force: true do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.string  "website_link"
-    t.string  "twitter_handle"
-    t.string  "headline"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "website_link"
+    t.string   "twitter_handle"
+    t.string   "headline"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "reviews", force: true do |t|

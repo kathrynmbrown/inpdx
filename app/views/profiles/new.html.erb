@@ -11,6 +11,8 @@
   <%= f.text_field :headline %>
   <%= f.label :organization %>
   <%= f.collection_select :organization_ids, Organization.order(:name), :id, :name, {}, {multiple:true} %>
+  <%= f.file_field :avatar %>
+  <%= f.file_field :background_image %>
   <%= f.hidden_field :user_id, :value => current_user.id  %>
   <%= f.submit "Create profile", class: "button" %>
 <% end %>
