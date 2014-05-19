@@ -8,4 +8,6 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   belongs_to :organization
   belongs_to :place
+  has_many :rsvps
+  has_many :profiles, through: :rsvps
 end

@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516193509) do
+ActiveRecord::Schema.define(version: 20140516200734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories_rsvps", id: false, force: true do |t|
-    t.integer "rsvp_id",     null: false
-    t.integer "category_id", null: false
-  end
 
   create_table "events", force: true do |t|
     t.string  "name"
@@ -81,6 +76,16 @@ ActiveRecord::Schema.define(version: 20140516193509) do
 
   add_index "reviews", ["place_id"], name: "index_reviews_on_place_id", using: :btree
   add_index "reviews", ["profile_id"], name: "index_reviews_on_profile_id", using: :btree
+
+  create_table "rsvps", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rsvps", ["event_id"], name: "index_rsvps_on_event_id", using: :btree
+  add_index "rsvps", ["profile_id"], name: "index_rsvps_on_profile_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

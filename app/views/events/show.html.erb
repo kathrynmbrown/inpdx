@@ -14,7 +14,7 @@
       <p><%= @event.description %></p>
     </div>
     <div class="large-3 columns">
-      LINK TO RSVP TO EVENT
+       <%= link_to "RSVP", new_rsvp_path, class: "button" %>
     </div>
   </div>
 </section>
@@ -37,6 +37,9 @@
       <h5>ADD EVENT TO CALENDAR BUTTON</h5>
       <h3>Who's going</h3>
       <p>ADD PEOPLE GOING TO EVENT HERE</p>
+        <% @event.profiles.each do |profile| %>
+          <li><%= profile.name %></li>
+        <% end %>
     </div>
   </div>
   <div class="row">
