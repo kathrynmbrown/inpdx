@@ -4,8 +4,8 @@ class TagsController < ApplicationController
     @tags = Tag.all
     @places = Place.all
     @organizations = Organization.all
-    @events = Event.all
-  end  
+    @events = Event.by_year("2014", field: :event_date)
+  end
 
   def index
     @tags = Tag.all
@@ -60,4 +60,4 @@ private
   def tag_params
     params.require(:tag).permit(:name)
   end
-end  
+end

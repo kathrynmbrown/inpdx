@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/radar/by_star
+  revision: 8c22f5108b9379adc7fc80d7c5b8b163027eee10
+  specs:
+    by_star (2.2.1)
+      activesupport
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: a1e33538c54511baa5ed61e763de2d4848208436
   specs:
@@ -233,6 +240,7 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
+  by_star!
   capybara
   chosen-rails
   coffee-rails

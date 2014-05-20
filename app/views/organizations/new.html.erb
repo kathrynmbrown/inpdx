@@ -1,15 +1,19 @@
-<h1>Add an Organization</h1>
+<div class="row">
+  <div class="large-6 columns">
+    <h1>Add an Organization</h1>
 
-  <%= form_for @organization do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :contact %>
-  <%= f.text_field :contact %>
-  <%= f.label :tag_list, "Tags (separated by commas)" %>
-  <%= f.text_field :tag_list %>
-  <%= f.file_field :avatar %>
-  <%= f.file_field :background_image %>
-  <%= f.submit "Save organization", class: "button" %>
-<% end %>
+      <%= form_for @organization do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.label :contact %>
+      <%= f.text_field :contact %>
+      <%= f.label :tag_list, "Tags (separated by commas)" %>
+      <%= f.text_field :tag_list %>
+      <%= f.file_field :avatar %>
+      <%= f.file_field :background %>
+      <%= f.submit "Save organization", class: "button" %>
+    <% end %>
+  </div>
+</div>

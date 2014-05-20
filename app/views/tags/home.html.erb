@@ -1,7 +1,7 @@
 <section id="homepage-hero">
   <div class="row" id="hero-header">
     <div class="large-7 columns">
-    </div> 
+    </div>
     <div class="large-5 columns">
       <h1>Sex in PDX</h1>
       <h4>Portland's Guide To All Things Sex</h4>
@@ -12,7 +12,7 @@
       <% end %>
     </div>
   </div>
-</section> 
+</section>
 <section id="tags-events">
   <div class="row" id="homepage-form">
     <div class="large-8 columns">
@@ -20,17 +20,17 @@
       <% @tags.each do |tag| %>
         <%= link_to tag.name, tag_path(tag.name), class: "button"%>
       <% end %>
-    </div>  
+    </div>
     <div class="large-4 columns" id="upcoming-events">
       <h5>Popular Upcoming Events</h5>
       <% @events.each do |event| %>
         <ul>
           <li><%= link_to event.name, event_path(event)%><br>
           <%= event.event_date %></li>
-        </ul>  
-      <% end %>  
+        </ul>
+      <% end %>
     </div>
-  </div>  
+  </div>
 </section>
 <section id="organizations">
   <div class="row">
@@ -46,7 +46,7 @@
       </ul>
     </div>
     <div class="large-4 columns" id="quote">
-      
+
     </div>
   </div>
 </section>
