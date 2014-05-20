@@ -4,7 +4,7 @@ class TagsController < ApplicationController
     @tags = Tag.all
     @places = Place.all
     @organizations = Organization.all
-    @events = Event.by_year("2014", field: :event_date)
+    @events = Event.by_month("April", field: :event_date)
   end
 
   def index
