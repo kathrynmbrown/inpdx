@@ -121,7 +121,7 @@ $secondary-color: #FFEAAD;
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-$header-font-color: #028F76;
+$header-font-color: #1C2130;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -1279,8 +1279,8 @@ $topbar-link-bg-hover: #028F76;
 // $range-slider-handle-cursor: pointer;
 
 #homepage-hero {
-  background-image: url(image_path('woodheart.jpg'));
-  height: 50%;
+  background-image: url(image_path('neon.jpg'));
+  height: 70%;
   text-align: left;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -1288,6 +1288,9 @@ $topbar-link-bg-hover: #028F76;
   background-color: #000000;
 }
 
+#hero-header {
+  margin-top: 100px;
+}
 
 #hero-header h1 {
   color: #ffffff;
@@ -1317,13 +1320,20 @@ $topbar-link-bg-hover: #028F76;
 }
 
 #page-hero {
-  background-image: url(image_path('wood.png'));
-  height: 400px;
+  background-image: url(image_path('starring.png'));
+  height: 500px;
   text-align: left;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   padding: 100px 20px 0 20px;
   background-color: #000000;
+}
+
+#page-hero h1 {
+  color: #ffffff;
+}
+
+#page-hero h4 {
+  color: #ffffff;
 }
 
 #page-body {
@@ -1336,8 +1346,9 @@ $topbar-link-bg-hover: #028F76;
 
 #app-footer {
   padding-top: 30px;
-  background-color: #028F76;
+  background-color: #1C2130;
   height: 250px;
+  color: #ffffff;
 }
 
 #copyright {

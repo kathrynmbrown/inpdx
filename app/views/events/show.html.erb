@@ -6,15 +6,12 @@
 </ul>
 <section id="page-hero">
   <div class="row">
-    <div class="small-6 large-3 columns">
+    <div class="small-12 large-4 columns">
       <%= image_tag @event.avatar.url(:medium) %>
     </div>
-    <div class="large-6 columns">
-      <h3><%= @event.name %></h3>
-      <p><%= @event.description %></p>
-    </div>
-    <div class="large-3 columns">
-       <%= link_to "RSVP", new_rsvp_path, class: "button" %>
+    <div class="small-12 large-8 columns">
+      <h1><%= @event.name %></h1>
+      <h4><%= @event.description %></h4>
     </div>
   </div>
 </section>
@@ -34,11 +31,11 @@
       <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
       <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
       <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
-      <h5>ADD EVENT TO CALENDAR BUTTON</h5>
+      <%= link_to "RSVP", new_rsvp_path, class: "button" %>
       <h3>Who's going</h3>
-      <p>ADD PEOPLE GOING TO EVENT HERE</p>
         <% @event.profiles.each do |profile| %>
-          <li><%= profile.name %></li>
+          <%= profile.name %>
+          <%= image_tag profile.avatar.url(:medium) %>
         <% end %>
     </div>
   </div>
