@@ -32,7 +32,7 @@
                     <%= image_tag review.profile.avatar.url(:medium) %></td>
                     <td>
                       <h5><strong><%= review.title %></strong></h5><br>
-                      Rating: <%= review.rating %>/10<br>
+                      Rating: <%= show_stars review %>
                       <%= review.content %>
                     </td>
                   </tr>
