@@ -18,24 +18,29 @@
 <section id="page-body">
   <div class="row">
     <div class="small-12 large-4 columns">
-    <h5>Location</h5>
-    <%= @event.place.name %>
+    <h3>Location</h3>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.place.latitude}%2C#{@event.place.longitude}" %>
+    <h5><%= @event.place.name %></h5>
     <h5>Address: <%= @event.place.address %></h5>
     </div>
     <div class="small-12 large-5 columns">
       <p><%= @event.long_description %></p>
     </div>
     <div class="small-12 large-3 columns">
-      <h5>Hosted by: <%= @event.organization.name %></h5>
-      <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
-      <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
-      <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
-      <%= link_to "RSVP", new_rsvp_path, class: "button" %>
+      <div id="event-info">
+        <h5>Hosted by: <%= @event.organization.name %></h5>
+        <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
+        <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
+        <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
+        <%= link_to "RSVP", new_rsvp_path, class: "button" %>
+      </div>
       <h3>Who's going</h3>
+      <ul class="small-block-grid-3">
         <% @event.profiles.each do |profile| %>
-          <%= profile.name %>
-          <%= image_tag profile.avatar.url(:medium) %>
+          <li>
+            <%= profile.name %><br>
+            <%= image_tag profile.avatar.url(:medium) %>
+          </li>
         <% end %>
     </div>
   </div>

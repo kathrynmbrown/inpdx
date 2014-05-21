@@ -20,6 +20,7 @@ gem 'unicorn'
 gem 'geocoder'
 gem 'chosen-rails'
 gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'cancancan'
 
 
 group :development do
