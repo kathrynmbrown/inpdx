@@ -31,6 +31,8 @@ class PlacesController < ApplicationController
 
   def show
      @place = Place.find_by_id(params[:id])
+     @current_profile = current_user.id
+     @review = Review.new
   end
 
   def edit
