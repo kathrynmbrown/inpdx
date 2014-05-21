@@ -22,24 +22,34 @@
       <h5>Address: <%= @place.address %></h5>
     </div>
     <div class="small-12 large-5 columns">
-      <p><%= link_to "Add a review", new_review_path %></p>
-      <% @place.reviews.each do |review| %>
-        <li>
-          <%= review.title %><br>
-          <%= review.content %><br>
-          <%= review.profile.name %><br>
-        </li>
-      <% end %>
+      <div class="panel">
+      <p><%= link_to "Add a review", new_review_path, class: 'button' %></p>
+        <% @place.reviews.each do |review| %>
+            <table>
+                <tbody>
+                  <tr>
+                    <td><%= review.profile.name %><br>
+                    <%= image_tag review.profile.avatar.url(:medium) %></td>
+                    <td>
+                      <h5><strong><%= review.title %></strong></h5><br>
+                      Rating: <%= review.rating %>/10<br>
+                      <%= review.content %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        <% end %>
+      </div>
     </div>
     <div class="small-12 large-3 columns">
-      <h5>Upcoming events</h5>
-      <% @place.events.each do |event| %>
-        <li>
-          <%= event.name %><br>
-          <%= event.description %><br>
-          LINK TO SEE MORE INFO
-        </li>
-      <% end %>
+      <div class="sidebar-info">
+        <h5>Upcoming events</h5>
+        <% @place.events.each do |event| %>
+            <p><strong><%= event.name %></strong></p>
+            <p><%= event.description %></p><br>
+            LINK TO SEE MORE INFO
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">

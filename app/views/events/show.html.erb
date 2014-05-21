@@ -27,7 +27,7 @@
       <p><%= @event.long_description %></p>
     </div>
     <div class="small-12 large-3 columns">
-      <div id="event-info">
+      <div class="sidebar-info">
         <h5>Hosted by: <%= @event.organization.name %></h5>
         <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
         <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
