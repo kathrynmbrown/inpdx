@@ -6,62 +6,40 @@
 
 <div class="row">
   <div class="small-12 large-8 columns">
-  <h3>Event Results</h3>
-    <table>
-      <thead>
-        <tr>
-          <th width="25%">Event</th>
-          <th width="40%">Description</th>
-          <th width="35%">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @events.each do |event| %>
-        <tr>
-          <td><%= link_to event.name, event_path(event) %></td>
-          <td><%= event.description %></td>
-          <td><%= event.event_date.strftime("%A %B %d, %Y") %> <br><%= event.start_time.strftime("%I:%M %P") %> to <%= event.end_time.strftime("%I:%M %P") %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <h3>Event Results</h3>
+    <% @events.each do |event| %>
+      <a href="#" data-reveal-id="myModal"><%= event.name %></a>
+        <div id="myModal" class="reveal-modal" data-reveal>
+          <h2><%= event.name %></h2>
+          <p class="lead"><%= event.event_date.strftime("%A %B %d, %Y") %> <br><%= event.start_time.strftime("%I:%M %P") %> to <%= event.end_time.strftime("%I:%M %P") %></p>
+          <p><%= event.description %></p>
+          <%= link_to "Go to Event page", event_path(event), class: "button" %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+    <% end %>
+
     <h3>Places Results</h3>
-    <table>
-      <thead>
-        <tr>
-          <th width="25%">Place</th>
-          <th width="40%">Description</th>
-          <th width="35%">Address</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @places.each do |place| %>
-        <tr>
-          <td><%= link_to place.name, place_path(place) %></td>
-          <td><%=place.description %></td>
-          <td><%=place.address %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <h3>Organization Results</h3>
-    <table>
-      <thead>
-        <tr>
-          <th width="25%">Organization</th>
-          <th width="40%">Description</th>
-          <th width="35%">Contact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @organizations.each do |organization| %>
-        <tr>
-          <td><%= link_to organization.name, organization_path(organization) %></td>
-          <td><%= organization.description %></td>
-          <td><%= organization.contact %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @places.each do |place| %>
+      <a href="#" data-reveal-id="myModal"><%= place.name %></a>
+        <div id="myModal" class="reveal-modal" data-reveal>
+          <h2><%= place.name %></h2>
+          <p class="lead"><%= place.address %></p>
+          <p><%= place.description %></p>
+          <%= link_to "Go to place page", place_path(place), class: "button" %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+    <% end %>
+
+    <h3>Organizations Results</h3>
+    <% @organizations.each do |organization| %>
+      <a href="#" data-reveal-id="myModal"><%= organization.name %></a>
+        <div id="myModal" class="reveal-modal" data-reveal>
+          <h2><%= organization.name %></h2>
+          <p class="lead">Contact: <%= organization.contact %></p>
+          <p><%= organization.description %></p>
+          <%= link_to "Go to organization page", organization_path(organization), class: "button" %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+    <% end %>
   </div>
 </div>
