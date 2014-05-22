@@ -33,10 +33,15 @@
       </ul>
     </div>
     <div class="small-12 large-3 columns">
-      MEMBERS LIST
-      <% @organization.profiles.each do |profile| %>
-        <li><%= profile.name %></li>
-      <% end %>
+      <h3>Members List</h3>
+      <ul class="small-block-grid-3">
+        <% @organization.profiles.each do |profile| %>
+          <li>
+            <%= profile.name %><br>
+            <%= image_tag profile.avatar.url(:medium) %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <div class="row">
