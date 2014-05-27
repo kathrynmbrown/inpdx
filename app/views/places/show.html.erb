@@ -72,7 +72,7 @@
         <% @place.events.each do |event| %>
             <p><strong><%= event.name %></strong></p>
             <p><%= event.description %></p><br>
-            LINK TO SEE MORE INFO
+            <%= link_to "See event details", event_path(event) %>
         <% end %>
       </div>
     </div>

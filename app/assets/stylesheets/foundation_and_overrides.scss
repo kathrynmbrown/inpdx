@@ -222,8 +222,8 @@ $h6-font-size: 1rem;
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: #efefef  ;
-// $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
+$accordion-navigation-bg-color: #333333 ;
+$accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
 // $accordion-navigation-font-size: rem-calc(16);
@@ -1373,5 +1373,6 @@ background-color: #333333;
   height: 70%;
   text-align: center;
 }
+
 
 @import 'foundation';

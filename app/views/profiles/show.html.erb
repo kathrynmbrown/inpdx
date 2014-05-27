@@ -12,27 +12,51 @@
     <div class="small-12 large-8 columns">
       <h1><%= @profile.name %></h1>
       <h4><%= @profile.headline %></h4>
+      <h5>Twitter: <%= @profile.twitter_handle %></h5>
     </div>
   </div>
 </section>
 <section id="page-body">
   <div class="row">
     <div class="small-12 large-4 columns">
-      <h5>Twitter: <%= @profile.twitter_handle %></h5>
+      <p>My place reviews</p>
     </div>
     <div class="small-12 large-5 columns">
-      <p>MY EVENTS</p>
+      <p>My events</p>
+      <% @profile.events.each do |event| %>
+        <li><%= event.name %></li>
+      <% end %>
     </div>
     <div class="small-12 large-3 columns">
-      My Organizations
-      <% @profile.organizations.each do |organization| %>
-        <li><%= organization.name %></li>
-      <% end %>
+      <dl class="accordion" data-accordion>
+        <dd>
+          <a href="#panel1">My Events</a>
+          <div id="panel1" class="content">
+            <% @profile.events.each do |event| %>
+              <li><%= event.name %></li>
+            <% end %>
+          </div>
+        </dd>
+        <dd>
+          <a href="#panel2">My Reviews</a>
+          <div id="panel2" class="content">
+            All my reviews!
+          </div>
+        </dd>
+        <dd>
+          <a href="#panel3">My Organizations</a>
+          <div id="panel3" class="content">
+            <% @profile.organizations.each do |organization| %>
+              <li><%= organization.name %></li>
+            <% end %>
+          </div>
+        </dd>
+      </dl>
     </div>
   </div>
   <div class="row">
     <div class="small-12 large-4 columns">
-      MY FAVORITE PLACES
+
     </div>
     <div class="small-12 large-6 columns">
 

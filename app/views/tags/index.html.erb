@@ -8,8 +8,8 @@
   <div class="small-12 large-8 columns">
     <h3>Event Results</h3>
     <% @events.each do |event| %>
-      <a href="#" data-reveal-id="myModal"><%= event.name %></a>
-        <div id="myModal" class="reveal-modal" data-reveal>
+      <a href="#" data-reveal-id="eventsModal"><%= event.name %></a>
+        <div id="eventsModal" class="reveal-modal" data-reveal>
           <h2><%= event.name %></h2>
           <p class="lead"><%= event.event_date.strftime("%A %B %d, %Y") %> <br><%= event.start_time.strftime("%I:%M %P") %> to <%= event.end_time.strftime("%I:%M %P") %></p>
           <p><%= event.description %></p>
@@ -20,8 +20,8 @@
 
     <h3>Places Results</h3>
     <% @places.each do |place| %>
-      <a href="#" data-reveal-id="myModal"><%= place.name %></a>
-        <div id="myModal" class="reveal-modal" data-reveal>
+      <a href="#" data-reveal-id="placeModal"><%= place.name %></a>
+        <div id="placeModal" class="reveal-modal" data-reveal>
           <h2><%= place.name %></h2>
           <p class="lead"><%= place.address %></p>
           <p><%= place.description %></p>
@@ -32,8 +32,8 @@
 
     <h3>Organizations Results</h3>
     <% @organizations.each do |organization| %>
-      <a href="#" data-reveal-id="myModal"><%= organization.name %></a>
-        <div id="myModal" class="reveal-modal" data-reveal>
+      <a href="#" data-reveal-id="orgModal"><%= organization.name %></a>
+        <div id="orgModal" class="reveal-modal" data-reveal>
           <h2><%= organization.name %></h2>
           <p class="lead">Contact: <%= organization.contact %></p>
           <p><%= organization.description %></p>
