@@ -348,7 +348,7 @@ $h6-font-size: 1rem;
 // $button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0px;
+$button-border-width: 0px;
 // $button-border-style: solid;
 // $bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
@@ -1288,16 +1288,23 @@ $topbar-link-bg-hover: #CE1836;
   background-color: #333333;
 }
 
+
 #hero-header {
   margin-top: 100px;
+  width: 50%;
+  text-align: center;
+  background-color: #ffffff;
+  opacity: 0.8;
 }
 
 #hero-header h1 {
-  color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  font-size: 60px;
 }
 
 #hero-header h4 {
-  color: #ffffff;
+  color: #000000;
 }
 
 #tags-events {
@@ -1320,12 +1327,13 @@ $topbar-link-bg-hover: #CE1836;
 }
 
 #page-hero {
-  background-image: url(image_path('starring.png'));
-  height: 500px;
-  text-align: left;
-  background-repeat: repeat;
-  padding: 100px 20px 0 20px;
-  background-color: #000000;
+  background-image: url(image_path('rainlg.png'));
+height: 70%;
+text-align: left;
+background-size: 100%;
+background-repeat: no-repeat;
+padding: 20px 0 20px;
+background-color: #333333;
 }
 
 #page-hero h1 {

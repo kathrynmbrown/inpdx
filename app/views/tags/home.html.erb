@@ -1,16 +1,12 @@
 <section id="homepage-hero">
   <div class="row" id="hero-header">
-    <div class="large-7 columns">
-    </div>
-    <div class="large-5 columns">
-      <h1>Sex in PDX</h1>
-      <h4>Portland's Guide To All Things Sex</h4>
-      <% if current_user %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "button" %></li>
-        <%= link_to "Login", new_user_session_path, class: "button" %></li>
-      <% end %>
-    </div>
+    <h1>Sex in PDX</h1>
+    <h4>Portland's Guide To All Things Sex</h4>
+    <% if current_user %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "button" %></li>
+      <%= link_to "Login", new_user_session_path, class: "button" %></li>
+    <% end %>
   </div>
 </section>
 <section id="tags-events">
