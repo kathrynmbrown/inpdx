@@ -39,9 +39,9 @@
 // Global
 
 // We use these to control various global styles
-$body-bg: #F6F0E3;
+$body-bg: #EEEEEE;
 $body-font-color: #1C2130;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Raleway", "Raleway", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -54,8 +54,8 @@ $body-font-color: #1C2130;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #D14334;
-$secondary-color: #FFEAAD;
+$primary-color: #009989;
+$secondary-color: #CCCCCC;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -1168,7 +1168,7 @@ $h6-font-size: 1rem;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #1C2130;
+$topbar-bg-color: #939393;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1180,7 +1180,7 @@ $topbar-bg-color: #1C2130;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #1C2130;
+$topbar-dropdown-bg: #CCCCCC;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-link-weight: normal;
@@ -1197,7 +1197,7 @@ $topbar-dropdown-bg: #1C2130;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #028F76;
+$topbar-link-bg-hover: #CE1836;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1279,13 +1279,13 @@ $topbar-link-bg-hover: #028F76;
 // $range-slider-handle-cursor: pointer;
 
 #homepage-hero {
-  background-image: url(image_path('neon.jpg'));
+  background-image: url(image_path('rainlg.png'));
   height: 70%;
   text-align: left;
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 20px 0 20px;
-  background-color: #000000;
+  background-color: #333333;
 }
 
 #hero-header {
@@ -1352,7 +1352,7 @@ $topbar-link-bg-hover: #028F76;
 
 #app-footer {
   padding-top: 30px;
-  background-color: #1C2130;
+  background-color: #333333;
   height: 250px;
   color: #ffffff;
 }
