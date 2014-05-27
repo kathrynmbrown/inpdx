@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render 'show'
+      redirect_to :back
     else
       render 'new'
     end

@@ -6,13 +6,14 @@ class RsvpsController < ApplicationController
 
   def new
     @rsvp = Rsvp.new
+    @current_profile = current_user.id
   end
 
   def create
     @events = Event.all
     @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save
-      render 'show'
+      redirect_to :back
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ class RsvpsController < ApplicationController
   private
 
   def rsvp_params
-    params.require(:rsvp).permit(:profile_id, :event_id)
+    params.require(:rsvp).permit(:profile_id, :event_id, :guests)
   end
 
 end

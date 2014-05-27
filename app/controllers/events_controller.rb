@@ -21,6 +21,8 @@ class EventsController < ApplicationController
 
   def show
      @event = Event.find_by_id(params[:id])
+     @current_profile = current_user.id
+     @rsvp = Rsvp.new
   end
 
   def edit
