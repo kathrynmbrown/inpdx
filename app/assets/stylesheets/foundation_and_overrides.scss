@@ -222,7 +222,7 @@ $h6-font-size: 1rem;
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-$accordion-navigation-bg-color: #333333 ;
+$accordion-navigation-bg-color: #B7CDDC ;
 $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
@@ -1197,7 +1197,7 @@ $topbar-dropdown-bg: #CCCCCC;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #CE1836;
+$topbar-link-bg-hover: #B7CDDC;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1326,23 +1326,6 @@ $topbar-link-bg-hover: #CE1836;
   margin-top: 15px;
 }
 
-#page-hero {
-  background-image: url(image_path('rainlg.png'));
-height: 70%;
-text-align: left;
-background-size: 100%;
-background-repeat: no-repeat;
-padding: 20px 0 20px;
-background-color: #333333;
-}
-
-#page-hero h1 {
-  color: #ffffff;
-}
-
-#page-hero h4 {
-  color: #ffffff;
-}
 
 #page-body {
   padding-top: 10px;
@@ -1352,8 +1335,19 @@ background-color: #333333;
   width: 450px;
 }
 
+#profile-box {
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 10px;
+}
+
+#profile-box {
+  padding: 10px;
+  margin: 10px;
+}
+
 .sidebar-info {
-  background-color: #FFEAAD;
+  background-color: #B7CDDC;
   padding: 15px;
   border-radius: 5px;
 }
