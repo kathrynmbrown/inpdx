@@ -19,9 +19,9 @@
   <div class="row">
     <div class="small-12 large-4 columns">
       <h3>Location</h3>
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.place.latitude}%2C#{@event.place.longitude}" %>
-      <h5><%= @event.place.name %></h5>
-      <h5>Address: <%= @event.place.address %></h5>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.company.latitude}%2C#{@event.company.longitude}" %>
+      <h5><%= @event.company.name %></h5>
+      <h5>Address: <%= @event.company.address %></h5>
     </div>
     <div class="small-12 large-5 columns">
       <p><%= @event.long_description %></p>

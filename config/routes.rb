@@ -2,14 +2,17 @@ Inpdx::Application.routes.draw do
 
   get 'tags/:tag', to: 'tags#index', as: :tag
   devise_for :users
-  resources :places
+  resources :companies do
+    resources :reviews
+  end
   resources :reviews
   resources :events
-  resources :organizations do
-    resources :events
-  end
   resources :profiles
+  resources :products do
+    resources :reviews
+  end
   resources :rsvps
   resources :tags
+  resources :restaurants
   root to: 'tags#home'
 end

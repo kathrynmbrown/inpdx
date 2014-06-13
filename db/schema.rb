@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527214254) do
+ActiveRecord::Schema.define(version: 20140612201354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "address"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -39,45 +56,17 @@ ActiveRecord::Schema.define(version: 20140527214254) do
   add_index "events", ["organization_id"], name: "index_events_on_organization_id", using: :btree
   add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
 
-  create_table "memberships", force: true do |t|
-    t.integer  "organization_id"
-    t.integer  "profile_id"
+  create_table "products", force: true do |t|
+    t.integer  "company_id"
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "price",               precision: 5, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  add_index "memberships", ["organization_id"], name: "index_memberships_on_organization_id", using: :btree
-  add_index "memberships", ["profile_id"], name: "index_memberships_on_profile_id", using: :btree
-
-  create_table "organizations", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "contact"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "background_file_name"
-    t.string   "background_content_type"
-    t.integer  "background_file_size"
-    t.datetime "background_updated_at"
-  end
-
-  create_table "places", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "address"
-    t.string   "phone"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "background_file_name"
-    t.string   "background_content_type"
-    t.integer  "background_file_size"
-    t.datetime "background_updated_at"
   end
 
   create_table "profiles", force: true do |t|
@@ -96,18 +85,37 @@ ActiveRecord::Schema.define(version: 20140527214254) do
     t.datetime "background_updated_at"
   end
 
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "address"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
   create_table "reviews", force: true do |t|
     t.integer  "profile_id"
-    t.integer  "place_id"
     t.string   "title"
     t.text     "content"
     t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "product_id"
+    t.integer  "company_id"
+    t.integer  "restaurant_id"
   end
 
-  add_index "reviews", ["place_id"], name: "index_reviews_on_place_id", using: :btree
+  add_index "reviews", ["company_id"], name: "index_reviews_on_company_id", using: :btree
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
   add_index "reviews", ["profile_id"], name: "index_reviews_on_profile_id", using: :btree
+  add_index "reviews", ["restaurant_id"], name: "index_reviews_on_restaurant_id", using: :btree
 
   create_table "rsvps", force: true do |t|
     t.integer  "event_id"

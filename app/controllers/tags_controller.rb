@@ -2,21 +2,24 @@ class TagsController < ApplicationController
 
   def home
     @tags = Tag.all
-    @places = Place.all
-    @organizations = Organization.all
+    @companies = Company.all
+    @restaurants = Restaurant.all
+    @products = Product.all
     @events = Event.by_month("April", field: :event_date)
   end
 
   def index
     @tags = Tag.all
     if params[:tag]
-      @places = Place.tagged_with(params[:tag])
-      @organizations = Organization.tagged_with(params[:tag])
+      @companies = Company.tagged_with(params[:tag])
+      @restaurants = Restaurant.tagged_with(params[:tag])
       @events = Event.tagged_with(params[:tag])
+      @products = Product.tagged_with(params[:tag])
     else
-      @places = Place.all
-      @organizations = Organization.all
+      @companies = Company.all
+      @restuarants = Restaurant.all
       @events = Event.all
+      @products = Product.all
     end
   end
 

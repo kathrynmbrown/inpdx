@@ -1,0 +1,7 @@
+<h1>Results</h1>
+
+<% @companies.each do |company| %>
+  <ul>
+    <li><%= company.name %><br><%= company.tag_list %></li>
+  </ul>
+<% end %>

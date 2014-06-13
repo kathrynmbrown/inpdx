@@ -7,7 +7,9 @@ class ReviewsController < ApplicationController
 
 
   def new
-    @place_options = Place.all.map{|p| [ p.name, p.id ] }
+    @company_options = Company.all.map{|p| [ p.name, p.id ] }
+    @product_options = Product.all.map{|p| [ p.name, p.id ] }
+    @restaurant_options = Restaurant.all.map{|p| [ p.name, p.id ] }
     @current_profile = current_user.id
     @review = Review.new
   end
@@ -22,13 +24,13 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by_id(params[:id])
+    @review = Review.find(params[:id])
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:title, :content, :rating, :profile_id, :place_id)
+    params.require(:review).permit(:title, :content, :rating, :profile_id, :company_id, :product_id, :restaurant_id)
   end
 
 end

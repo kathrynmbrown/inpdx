@@ -18,28 +18,41 @@
         </div>
     <% end %>
 
-    <h3>Places Results</h3>
-    <% @places.each do |place| %>
-      <a href="#" data-reveal-id="placeModal"><%= place.name %></a>
-        <div id="placeModal" class="reveal-modal" data-reveal>
-          <h2><%= place.name %></h2>
-          <p class="lead"><%= place.address %></p>
-          <p><%= place.description %></p>
-          <%= link_to "Go to place page", place_path(place), class: "button" %>
+    <h3>Company Results</h3>
+    <% @companies.each do |company| %>
+      <a href="#" data-reveal-id="companyModal"><%= company.name %></a>
+        <div id="companyModal" class="reveal-modal" data-reveal>
+          <h2><%= company.name %></h2>
+          <p class="lead"><%= company.address %></p>
+          <p><%= company.description %></p>
+          <%= link_to "Go to company page", company_path(company), class: "button" %>
           <a class="close-reveal-modal">&#215;</a>
         </div>
     <% end %>
 
-    <h3>Organizations Results</h3>
-    <% @organizations.each do |organization| %>
-      <a href="#" data-reveal-id="orgModal"><%= organization.name %></a>
-        <div id="orgModal" class="reveal-modal" data-reveal>
-          <h2><%= organization.name %></h2>
-          <p class="lead">Contact: <%= organization.contact %></p>
-          <p><%= organization.description %></p>
-          <%= link_to "Go to organization page", organization_path(organization), class: "button" %>
+    <h3>Product Results</h3>
+    <% @products.each do |product| %>
+      <a href="#" data-reveal-id="productyModal"><%= product.name %></a>
+        <div id="productModal" class="reveal-modal" data-reveal>
+          <h2><%= product.name %></h2>
+          <p class="lead"><%= product.price %></p>
+          <p><%= product.description %></p>
+          <%= link_to "Go to product page", product_path(product), class: "button" %>
           <a class="close-reveal-modal">&#215;</a>
         </div>
     <% end %>
+
+    <h3>Restaurant Results</h3>
+    <% @restaurants.each do |restaurant| %>
+      <a href="#" data-reveal-id="restaurantModal"><%= restaurant.name %></a>
+        <div id="restaurantModal" class="reveal-modal" data-reveal>
+          <h2><%= restaurant.name %></h2>
+          <p class="lead"><%= restaurant.address %></p>
+          <p><%= restaurant.description %></p>
+          <%= link_to "Go to restaurant page", restaurant_path(restaurant), class: "button" %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+    <% end %>
+
   </div>
 </div>

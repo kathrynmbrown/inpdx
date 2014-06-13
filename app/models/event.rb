@@ -6,8 +6,7 @@ class Event < ActiveRecord::Base
   validates :end_time, presence: true
   validates :contact, presence: true
   acts_as_taggable
-  belongs_to :organization
-  belongs_to :place
+  belongs_to :company
   has_many :rsvps
   has_many :profiles, through: :rsvps
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"

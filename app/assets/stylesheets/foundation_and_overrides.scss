@@ -41,7 +41,7 @@
 // We use these to control various global styles
 $body-bg: #EEEEEE;
 $body-font-color: #1C2130;
-$body-font-family: "Raleway", "Raleway", Helvetica, Arial, sans-serif;
+$body-font-family: 'Cabin', sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -118,7 +118,7 @@ $secondary-color: #CCCCCC;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: 'Montserrat', sans-serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 $header-font-color: #1C2130;
@@ -1279,7 +1279,7 @@ $topbar-link-bg-hover: #B7CDDC;
 // $range-slider-handle-cursor: pointer;
 
 #homepage-hero {
-  background-image: url(image_path('rainlg.png'));
+  background-image: url(image_path('veggieburger.jpg'));
   height: 70%;
   text-align: left;
   background-size: 100%;
@@ -1293,18 +1293,24 @@ $topbar-link-bg-hover: #B7CDDC;
   margin-top: 100px;
   width: 50%;
   text-align: center;
-  background-color: #ffffff;
-  opacity: 0.8;
+  margin-top: 20px;
 }
 
 #hero-header h1 {
   color: #000000;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 40px;
+  color: #ffffff;
 }
 
 #hero-header h4 {
   color: #000000;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+#page-hero {
+  height: 50%;
 }
 
 #tags-events {
