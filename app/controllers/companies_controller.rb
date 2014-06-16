@@ -7,9 +7,11 @@ class CompaniesController < ApplicationController
     if params[:tag]
       @companies = Company.tagged_with(params[:tag])
       @events = Event.tagged_with(params[:tag])
+      @products = Product.tagged_with(params[:tag])
     else
       @companies = Company.all
       @events = Event.all
+      @products = Product.all
     end
 
   end
@@ -29,6 +31,7 @@ class CompaniesController < ApplicationController
 
   def show
      @company = Company.find(params[:id])
+     @product = Product.find_by_id(params[:id])
      @current_profile = current_user.id
      @review = Review.new
   end

@@ -12,25 +12,77 @@
     <div class="small-12 large-8 columns">
       <h1><%= @company.name %></h1>
       <h4><%= @company.description %></h4>
+      <p>Tags:</p>
+        <% @company.tag_list.each do |tag| %>
+          <%= link_to tag, tag_path(tag), class: "button"%>
+        <% end %>
     </div>
   </div>
 </section>
 <section id="page-body">
   <div class="row">
-    <div class="small-12 large-3 columns">
+    <div class="small-12 large-4 columns">
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@company.latitude}%2C#{@company.longitude}" %>
       <h5>Address: <%= @company.address %></h5>
-      <h3>Companies nearby</h3>
-      <ul>
-      <% for company in @company.nearbys(10) %>
-        <li><%= link_to company.name, company %> (<%= company.distance.round(2) %> miles)</li>
-      <% end %>
-      </ul>
+        <dl class="accordion" data-accordion>
+          <dd>
+            <a href="#panel1">Companies Nearby</a>
+            <div id="panel1" class="content">
+              <ul>
+              <% for company in @company.nearbys(10) %>
+                <li><%= link_to company.name, company %> (<%= company.distance.round(2) %> miles)</li>
+              <% end %>
+              </ul>
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel2">Products</a>
+            <div id="panel2" class="content">
+              <% @company.products.each do |product| %>
+                <%= image_tag product.avatar.url(:thumb) %>
+                <%= link_to product.name, company_product_url(@company,product) %>
+              <% end %>
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel3">More More Features</a>
+            <div id="panel3" class="content">
+              Features
+            </div>
+          </dd>
+        </dl>
+      </div>
+    <div class="small-12 large-8 columns">
+      <h4>Company pictures</h4>
+      <ul class="example-orbit" data-orbit>
+      <li>
+        <%= image_tag("heidiho.jpg") %>
+        <div class="orbit-caption">
+          Heidi Ho Organics Chia Cheeze
+        </div>
+      </li>
+      <li class="active">
+        <%= image_tag("heidiho.jpg") %>
+        <div class="orbit-caption">
+          Heidi Ho Organics Chia Cheeze
+        </div>
+      </li>
+      <li>
+        <%= image_tag("heidiho.jpg") %>
+        <div class="orbit-caption">
+          Heidi Ho Organics Chia Cheeze
+        </div>
+      </li>
+    </ul>
     </div>
-    <div class="small-12 large-6 columns">
+  </div>
+  <div class="row">
+    <div class="small-12 large-4 columns">
+      Other companies you might like
+    </div>
+    <div class="small-12 large-8 columns">
       <div class="panel">
-        <p>Have you been to <%= @company.name %>? Leave a review!</p>
-          <a href="#" data-reveal-id="reviewModal", class="button">Add a Review</a>
+        <p>Have you been to <%= @company.name %>? Leave a review! <a href="#" data-reveal-id="reviewModal">Add a Review</a></p>
             <div id="reviewModal" class="reveal-modal" data-reveal>
               <h2>Add a Review</h2>
               <p class="lead">Add a Review</p>
@@ -57,18 +109,13 @@
                       </td>
                       <td>
                         <h5><strong><%= review.title %></strong></h5><br>
-                        Rating: <%= show_stars review %>
+                        Rating (out of 5): <%= show_stars review %>
                         <%= review.content %>
                       </td>
                     </tr>
                   </tbody>
                 </table>
           <% end %>
-      </div>
-    </div>
-    <div class="small-12 large-3 columns">
-      <div class="sidebar-info">
-        Something!
       </div>
     </div>
   </div>

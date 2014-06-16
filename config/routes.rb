@@ -4,6 +4,7 @@ Inpdx::Application.routes.draw do
   devise_for :users
   resources :companies do
     resources :reviews
+    resources :products
   end
   resources :reviews
   resources :events

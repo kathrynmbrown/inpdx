@@ -11,6 +11,7 @@
       <%= f.text_field :price %>
       <%= f.label :tag_list, "Tags (separated by commas)" %>
       <%= f.text_field :tag_list %>
+      <%= f.select(:company_id, @company_options) %>
       <%= f.file_field :avatar %>
       <%= f.submit "Save product", class: "button" %>
     <% end %>

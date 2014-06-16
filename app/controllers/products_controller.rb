@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @company_options = Company.all.map{|p| [ p.name, p.id ] }
     @product = Product.new
   end
 
