@@ -4,54 +4,33 @@
   <li class="current"><a href="#">All Results</a></li>
 </ul>
 
+<section id="page-body">
 <div class="row">
-  <div class="small-12 large-8 columns">
-    <h3>Event Results</h3>
-    <% @events.each do |event| %>
-      <a href="#" data-reveal-id="eventsModal"><%= event.name %></a>
-        <div id="eventsModal" class="reveal-modal" data-reveal>
-          <h2><%= event.name %></h2>
-          <p class="lead"><%= event.event_date.strftime("%A %B %d, %Y") %> <br><%= event.start_time.strftime("%I:%M %P") %> to <%= event.end_time.strftime("%I:%M %P") %></p>
-          <p><%= event.description %></p>
-          <%= link_to "Go to Event page", event_path(event), class: "button" %>
-          <a class="close-reveal-modal">&#215;</a>
-        </div>
-    <% end %>
-    <h3>Company Results</h3>
-    <% @companies.each do |company| %>
-      <a href="#" data-reveal-id="companyModal"><%= company.name %></a>
-        <div id="companyModal" class="reveal-modal" data-reveal>
-          <h2><%= company.name %></h2>
-          <p class="lead"><%= company.address %></p>
-          <p><%= company.description %></p>
-          <%= link_to "Go to company page", company_path(company), class: "button" %>
-          <a class="close-reveal-modal">&#215;</a>
-        </div>
-    <% end %>
-
-    <h3>Product Results</h3>
+  <ul class="large-block-grid-6 small-block-grid-2">
     <% @products.each do |product| %>
-      <a href="#" data-reveal-id="productyModal"><%= product.name %></a>
-        <div id="productModal" class="reveal-modal" data-reveal>
-          <h2><%= product.name %></h2>
-          <p class="lead"><%= product.price %></p>
-          <p><%= product.description %></p>
-          <%= link_to "Go to product page", product_path(product), class: "button" %>
-          <a class="close-reveal-modal">&#215;</a>
-        </div>
+      <li><%= link_to (image_tag product.avatar.url(:medium)), product_path(product) %></li>
     <% end %>
-
-    <h3>Restaurant Results</h3>
-    <% @restaurants.each do |restaurant| %>
-      <a href="#" data-reveal-id="restaurantModal"><%= restaurant.name %></a>
-        <div id="restaurantModal" class="reveal-modal" data-reveal>
-          <h2><%= restaurant.name %></h2>
-          <p class="lead"><%= restaurant.address %></p>
-          <p><%= restaurant.description %></p>
-          <%= link_to "Go to restaurant page", restaurant_path(restaurant), class: "button" %>
-          <a class="close-reveal-modal">&#215;</a>
-        </div>
-    <% end %>
-
-  </div>
+  <ul>
 </div>
+<div class="row">
+  <ul class="large-block-grid-6 small-block-grid-2">
+    <% @events.each do |event| %>
+      <li><%= link_to (image_tag event.avatar.url(:medium)), event_path(event) %></li>
+    <% end %>
+  </ul>
+<div>
+<div class="row">
+  <ul class="large-block-grid-6 small-block-grid-2">
+    <% @companies.each do |company| %>
+      <li><%= link_to (image_tag company.avatar.url(:medium)), company_path(company) %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="row">
+  <ul class="large-block-grid-6 small-block-grid-2">
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to (image_tag restaurant.avatar.url(:medium)), restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+</div>
+</section>
