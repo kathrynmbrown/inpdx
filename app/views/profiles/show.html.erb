@@ -4,16 +4,21 @@
   <li class="unavailable"><a href="#">All Results</a></li>
   <li class="current"><a href="#"><%= @profile.name %></a></li>
 </ul>
-<section id="page-body">
+<section id="page-hero">
   <div class="row">
     <div class="small-12 large-4 columns">
-      <div id="profile-box">
-        <%= image_tag @profile.avatar.url(:medium) %>
-        <h1><%= @profile.name %></h1>
-        <h4><%= @profile.headline %></h4>
-        <h5>Twitter: <%= @profile.twitter_handle %></h5>
-      </div>
-      <div id="interest-box">
+        <%= image_tag @profile.avatar.url(:thumb) %>
+    </div>
+    <div class="small-12 large-8 columns">
+      <h1><%= @profile.name %></h1>
+      <h4><%= @profile.headline %></h4>
+      <h5>Twitter: <%= @profile.twitter_handle %></h5>
+    </div>
+  </div>
+</section>
+<section id="page-body">
+  <div class="row">
+  <div class="small-12 large-4 columns">
         <dl class="accordion" data-accordion>
           <dd>
             <a href="#panel1">My Events</a>
@@ -24,22 +29,42 @@
             </div>
           </dd>
           <dd>
-            <a href="#panel2">My Reviews</a>
+            <a href="#panel2">My Favorite Companies</a>
             <div id="panel2" class="content">
-              All my reviews!
+              All my companies!
             </div>
           </dd>
           <dd>
             <a href="#panel3">My Favorite Products</a>
             <div id="panel3" class="content">
-              Add favorite products soon. 
+              Add favorite products soon.
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel2">My Favorite Restaurants</a>
+            <div id="panel2" class="content">
+              All my restaurants!
             </div>
           </dd>
         </dl>
-      </div>
     </div>
     <div class="small-12 large-8 columns">
-      BIO HERE - social networks here.
+      <div class="panel">
+        <p>My recent reviews</p>
+        <% @profile.reviews.each do |review| %>
+            <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5><strong><%= review.title %></strong></h5><br>
+                      <p>Rating (out of 5): <%= show_stars review %></p>
+                      <p><%= review.content %></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
