@@ -33,7 +33,7 @@
               <ul class="dropdown">
                  <li><%= link_to 'View profile', profile_path(current_user) %></li>
                  <li><%= link_to 'Create profile', new_profile_path %></li>
-                 <% if current_user.has_role? :admin %> %>
+                 <% if current_user.has_role? :admin %>
                    <li><%= link_to 'New company', new_company_path %></li>
                    <li><%= link_to 'New event', new_event_path %></li>
                    <li><%= link_to 'New product', new_product_path %></li>

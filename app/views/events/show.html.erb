@@ -12,26 +12,16 @@
     <div class="small-12 large-8 columns">
       <h1><%= @event.name %></h1>
       <h4><%= @event.description %></h4>
+      <p>Tags:</p>
+        <% @event.tag_list.each do |tag| %>
+          <%= link_to tag, tag_path(tag), class: "button"%>
+        <% end %>
     </div>
   </div>
 </section>
 <section id="page-body">
-  <div class="row">
-    <div class="small-12 large-4 columns">
-      <h3>Location</h3>
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.company.latitude}%2C#{@event.company.longitude}" %>
-      <h5><%= @event.company.name %></h5>
-      <h5>Address: <%= @event.company.address %></h5>
-    </div>
-    <div class="small-12 large-5 columns">
-      <p><%= @event.long_description %></p>
-    </div>
-    <div class="small-12 large-3 columns">
-      <div class="sidebar-info">
-        <h5>Hosted by: <%= @event.organization.name %></h5>
-        <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
-        <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
-        <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
+    <div class="row">
+      <div class="small-12 large-4 columns">
         <p>Want to join us? RSVP below.</p>
         <%= form_for @rsvp do |f| %>
             <%= f.label "How many people?" %>
@@ -40,16 +30,64 @@
             <%= f.hidden_field :profile_id, value: @current_profile %>
             <%= f.submit "RSVP", class: "button" %>
           <% end %>
-        <h3>Who's going</h3>
-        <ul class="small-block-grid-3">
-          <% @event.profiles.each do |profile| %>
-            <li>
-              <%= profile.name %><br>
-              <%= image_tag profile.avatar.url(:medium) %>
-            </li>
-          <% end %>
-        </ul>
+          <dl class="accordion" data-accordion>
+            <dd>
+              <a href="#panel1">When</a>
+              <div id="panel1" class="content">
+                <h5>Date: <%= @event.event_date.strftime("%A %B %d, %Y") %></h5>
+                <h5>Start Time: <%= @event.start_time.strftime("%I:%M %P") %></h5>
+                <h5>End Time: <%= @event.end_time.strftime("%I:%M %P") %></h5>
+              </div>
+            </dd>
+            <dd>
+              <a href="#panel2">Where</a>
+              <div id="panel2" class="content">
+                Location
+              </div>
+            </dd>
+            <dd>
+              <a href="#panel3">Who's Going</a>
+              <div id="panel3" class="content">
+                <ul class="small-block-grid-3">
+                  <% @event.profiles.each do |profile| %>
+                    <li>
+                      <%= profile.name %><br>
+                      <%= image_tag profile.avatar.url(:medium) %>
+                    </li>
+                  <% end %>
+              </div>
+            </dd>
+            <dd>
+              <a href="#panel4">Hosted by</a>
+              <div id="panel4" class="content">
+                Event Host
+              </div>
+            </dd>
+          </dl>
+        </div>
+      <div class="small-12 large-8 columns">
+        <p><%= @event.long_description %></p>
+        <h4>Event pictures</h4>
+        <ul class="example-orbit" data-orbit>
+        <li>
+          <%= image_tag("heidiho.jpg") %>
+          <div class="orbit-caption">
+            Heidi Ho Organics Chia Cheeze
+          </div>
+        </li>
+        <li class="active">
+          <%= image_tag("heidiho.jpg") %>
+          <div class="orbit-caption">
+            Heidi Ho Organics Chia Cheeze
+          </div>
+        </li>
+        <li>
+          <%= image_tag("heidiho.jpg") %>
+          <div class="orbit-caption">
+            Heidi Ho Organics Chia Cheeze
+          </div>
+        </li>
+      </ul>
       </div>
     </div>
-  </div>
 </section>

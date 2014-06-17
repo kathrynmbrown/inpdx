@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def show
-     @event = Event.find_by_id(params[:id])
+     @event = Event.find(params[:id])
      @current_profile = current_user.id
      @rsvp = Rsvp.new
   end
@@ -45,6 +45,6 @@ class EventsController < ApplicationController
 
 private
   def event_params
-    params.require(:event).permit(:name, :description, :contact, :tag_list, :long_description, :event_date, :start_time, :end_time, :organization_id, :company_id, :avatar, :background)
+    params.require(:event).permit(:name, :description, :contact, :tag_list, :long_description, :event_date, :start_time, :end_time, :company_id, :avatar, :background)
   end
 end
