@@ -14,4 +14,5 @@ class Company < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   accepts_nested_attributes_for :reviews
   accepts_nested_attributes_for :products
+  resourcify
 end

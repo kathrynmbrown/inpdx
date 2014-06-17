@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+
   def home
   end
 
@@ -17,6 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    authorize @product
     @company_options = Company.all.map{|p| [ p.name, p.id ] }
     @product = Product.new
   end
@@ -56,7 +58,9 @@ class ProductsController < ApplicationController
   end
 
 private
+
   def product_params
     params.require(:product).permit(:name, :description, :price, :company_id, :avatar, :tag_list)
   end
+
 end

@@ -20,6 +20,8 @@ gem 'unicorn'
 gem 'geocoder'
 gem 'chosen-rails'
 gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'rolify'
+gem 'cancancan', '~> 1.8'
 
 
 
@@ -37,6 +39,7 @@ group :test, :development do
   gem 'capybara'
   gem 'pry'
   gem 'dotenv-rails'
+  gem 'shoulda-matchers'
 end
 
 

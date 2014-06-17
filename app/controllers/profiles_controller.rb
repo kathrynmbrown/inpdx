@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   def index
     @profiles = Profile.all
   end
@@ -26,5 +27,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:user_id, :name, :website_link, :twitter_handle, :headline, :avatar, :background)
   end
+
+
 
 end
