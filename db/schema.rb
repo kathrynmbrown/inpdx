@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616231526) do
+ActiveRecord::Schema.define(version: 20140617030535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140616231526) do
     t.string   "background_content_type"
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
+    t.text     "company_details"
+    t.string   "website"
   end
 
   create_table "events", force: true do |t|
@@ -56,6 +58,18 @@ ActiveRecord::Schema.define(version: 20140616231526) do
   add_index "events", ["organization_id"], name: "index_events_on_organization_id", using: :btree
   add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
 
+  create_table "marks", id: false, force: true do |t|
+    t.integer  "marker_id"
+    t.string   "marker_type"
+    t.integer  "markable_id"
+    t.string   "markable_type"
+    t.string   "mark",          limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "marks", ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark", using: :btree
+  add_index "marks", ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark", using: :btree
+
   create_table "products", force: true do |t|
     t.integer  "company_id"
     t.string   "name"
@@ -67,6 +81,8 @@ ActiveRecord::Schema.define(version: 20140616231526) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.text     "product_details"
+    t.text     "ordering_details"
   end
 
   create_table "profiles", force: true do |t|
@@ -98,6 +114,8 @@ ActiveRecord::Schema.define(version: 20140616231526) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.text     "website"
+    t.text     "hours"
   end
 
   create_table "reviews", force: true do |t|
