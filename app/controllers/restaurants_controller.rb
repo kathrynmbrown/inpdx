@@ -29,6 +29,9 @@ class RestaurantsController < ApplicationController
      @restaurant = Restaurant.find(params[:id])
      @current_profile = current_user.id
      @review = Review.new
+     @favoriteable = @restaurant
+     @favorites = @favoriteable.favorites
+     @favorite = Favorite.new
   end
 
   def edit

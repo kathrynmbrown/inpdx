@@ -34,6 +34,9 @@ class CompaniesController < ApplicationController
      @product = Product.find_by_id(params[:id])
      @current_profile = current_user.id
      @review = Review.new
+     @favoriteable = @company
+     @favorites = @favoriteable.favorites
+     @favorite = Favorite.new
   end
 
   def edit

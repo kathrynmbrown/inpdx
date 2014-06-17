@@ -1,5 +1,3 @@
-<h1>Favorites</h1>
-
 <%= form_for [@favoriteable, @favorite] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id  %>
     <%= f.submit "Favorite", class: "button" %>
