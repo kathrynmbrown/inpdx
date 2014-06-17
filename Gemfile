@@ -22,7 +22,6 @@ gem 'chosen-rails'
 gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'rolify'
 gem 'cancancan', '~> 1.8'
-gem 'markable', :git => "git://github.com/chrome/markable"
 
 
 group :development do

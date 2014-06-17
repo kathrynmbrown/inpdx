@@ -10,5 +10,5 @@ class Product < ActiveRecord::Base
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
     accepts_nested_attributes_for :reviews
     resourcify
-    markable_as :favorite
+    has_many :favorites, as: :favoriteable
 end

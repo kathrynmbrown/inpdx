@@ -15,5 +15,5 @@ class Company < ActiveRecord::Base
   accepts_nested_attributes_for :reviews
   accepts_nested_attributes_for :products
   resourcify
-  markable_as :favorite
+  has_many :favorites, as: :favoriteable
 end

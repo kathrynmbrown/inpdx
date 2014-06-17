@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/chrome/markable
-  revision: 6fece7b200e339b87e2abf3cad190ab10966e04b
-  specs:
-    markable (0.1.4)
-      rails (>= 3.1)
-
-GIT
   remote: git://github.com/radar/by_star
   revision: 8c22f5108b9379adc7fc80d7c5b8b163027eee10
   specs:
@@ -263,7 +256,6 @@ DEPENDENCIES
   jquery-turbolinks
   launchy
   letter_opener
-  markable!
   paperclip!
   pg
   pry

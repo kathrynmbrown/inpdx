@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617030535) do
+ActiveRecord::Schema.define(version: 20140617170521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,17 +58,16 @@ ActiveRecord::Schema.define(version: 20140617030535) do
   add_index "events", ["organization_id"], name: "index_events_on_organization_id", using: :btree
   add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
 
-  create_table "marks", id: false, force: true do |t|
-    t.integer  "marker_id"
-    t.string   "marker_type"
-    t.integer  "markable_id"
-    t.string   "markable_type"
-    t.string   "mark",          limit: 128
+  create_table "favorites", force: true do |t|
+    t.string   "name"
+    t.integer  "favoriteable_id"
+    t.string   "favoriteable_type"
     t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
-  add_index "marks", ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark", using: :btree
-  add_index "marks", ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "products", force: true do |t|
     t.integer  "company_id"
